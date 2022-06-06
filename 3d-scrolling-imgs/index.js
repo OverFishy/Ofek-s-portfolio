@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     .get("https://ghibliapi.herokuapp.com/films")
     .then(function(response) {
       films = response.data;
-      appendFilms(films);
+      appendPokemon();
       window.addEventListener("scroll", moveCamera);
       setSceneHeight();
     })
@@ -32,9 +32,10 @@ function setSceneHeight() {
     getComputedStyle(document.documentElement).getPropertyValue("--cameraSpeed")
   );
 
+  /* how the depth of the scene is determined (as in, how much can we scroll the z-axis) */
   const height =
-    window.innerHeight +
-    scenePerspective * cameraSpeed +
+    window.innerHeight +                  // base, to see the viewport
+    scenePerspective * cameraSpeed +      // to be able to zoom in the entire perspective defined, the faster the camera, the less is needed
     itemZ * cameraSpeed * numberOfItems;
 
   // Update --viewportHeight value
@@ -59,4 +60,19 @@ function appendFilms(films) {
   }
 
   filmsEl.innerHTML = filmsNodes.join(" ");
+}
+
+function createPhotoItem(fileIndex) {
+  return `<img src="imgs/${fileIndex}.png">`
+}
+
+function appendPokemon() {
+  const sceneEl = document.querySelector(".viewport .scene3D");
+  let photoNodes = [];
+
+  for (let i = 1; i <= 4; i++) {
+    photoNodes.push(createPhotoItem(i));
+  }
+
+  sceneEl.innerHTML = photoNodes.join(" ");
 }
