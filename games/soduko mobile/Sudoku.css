@@ -1,0 +1,147 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 8px;
+}
+
+hr {
+  width: 70vw;
+}
+
+#errors {
+  color: coral;
+}
+#board {
+  width: calc(100vw - 20px);
+  height: calc(100vw - 20px);
+
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(9, auto);
+  grid-template-rows: repeat(9, auto);
+  border: 2px solid black;
+}
+
+.tile {
+  border: 0.6px solid lightgray;
+
+  /* for the text */
+  font-size: 30px;
+  color: rgb(69 69 70);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#digits {
+  width: calc(100vw - 20px);
+  height: 50px;
+
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(9, auto);
+}
+
+.number {
+  border: 1px solid rgb(0, 0, 0);
+
+  /* for the text */
+  font-size: 20px;
+  color: rgb(69 69 70);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2px;
+}
+
+.number-selected {
+  background-color: lightgrey;
+}
+
+.generated-tile {
+  background-color: whitesmoke;
+}
+
+.horizontal-line-bottom {
+  border-bottom: 1px solid black;
+}
+
+.horizontal-line-top {
+  border-top: 1px solid black;
+}
+
+.vertical-line-right {
+  border-right: 1px solid black;
+}
+
+.vertical-line-left {
+  border-left: 1px solid black;
+}
+
+.vertical-line-left-frame {
+  border-left: 2px solid black;
+}
+
+.vertical-line-right-frame {
+  border-right: 2px solid black;
+}
+
+.horizontal-line-top-frame {
+  border-top: 2px solid black;
+}
+
+.horizontal-line-bottom-frame {
+  border-bottom: 2px solid black;
+}
+
+/* Error animation */
+
+@keyframes pulse-red {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+  }
+
+  70% {
+    transform: scale(0.975);
+    box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+  }
+}
+.error {
+  /* background: rgba(255, 82, 82, 1); */
+  border: 1px solid rgba(255, 82, 82, 1);
+  box-shadow: 0 0 0 0 rgba(255, 82, 82, 1);
+  animation: pulse-red 1s;
+}
+
+/* success animation */
+
+.success {
+  /* background: rgba(51, 217, 178, 1); */
+  border: 1px solid rgba(51, 217, 178, 1);
+  box-shadow: 0 0 0 0 rgba(51, 217, 178, 1);
+  animation: pulse-green 1s;
+}
+
+@keyframes pulse-green {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(51, 217, 178, 0.7);
+  }
+
+  70% {
+    transform: scale(0.975);
+    box-shadow: 0 0 0 10px rgba(51, 217, 178, 0);
+  }
+
+  100% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);
+  }
+}
