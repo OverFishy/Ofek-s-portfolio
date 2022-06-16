@@ -45,6 +45,7 @@ hr {
   width: 44px;
   height: 44px;
   border: 1px solid rgb(0, 0, 0);
+  /* border: 0.05 solid rgb(0, 0, 0); */
 
   /* for the text */
   font-size: 20px;

@@ -1,0 +1,45 @@
+#board {
+  width: 70vw;
+  height: 70vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(21, auto);
+  grid-template-rows: repeat(21, auto);
+  border: 12px solid #99885c;
+  border-radius: 12px;
+}
+
+.generated-tile {
+  /* class that the tiles share */
+}
+
+.light-green {
+  background-color: rgb(207, 236, 207);
+}
+.green {
+  background-color: rgb(189, 227, 189);
+}
+
+/* .tile {
+  border: 1px solid ghostwhite;
+  background-color: lightgreen;
+  font-size: 30px;
+  color: rgb(69 69 70);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* #game-board {
+  position: sticky;
+  top: 1em;
+  width: 50vw;
+  height: 50vw;
+  min-width: 300px;
+  min-height: 300px;
+  max-width: calc(100vh - 2em);
+  max-height: calc(100vh - 2em);
+  overflow: hidden;
+  border: 12px solid #b4b2ae;
+  border-radius: 12px;
+} */
