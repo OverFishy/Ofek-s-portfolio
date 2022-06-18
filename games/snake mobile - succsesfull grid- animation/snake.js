@@ -28,7 +28,6 @@ export function render(gameBoard) {
     snakeElement.style.gridRowStart = sagment.y;
     snakeElement.classList.add('snake');
     gameBoard.appendChild(snakeElement);
-    // DecorBoard()
   })
 }
 

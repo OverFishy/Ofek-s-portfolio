@@ -3,23 +3,31 @@ import { randomGridPosition } from './grid.js'
 
 let apple = getRandomApplePosition()
 let score = 0;
-let appleAnimation = document.createElement('div');
-let appleElement;
+//  Creating 1st apple animation element
+let appleElement = document.createElement('div');
+
+const appleBoard = document.getElementById('board-apple');
 
 const EXPANSION_RATE = 1;
-const boardAnimation = document.getElementById('board-animation');
 
-function appleAnimations() {
-  if (appleAnimation.style.gridColumnStart == apple.x &&
-      appleAnimation.style.gridRowStart == apple.y) {
-        return }
-  boardAnimation.innerHTML = '';
-  appleAnimation = document.createElement('div');
-  appleAnimation.classList.add('apple-animation');
-  appleAnimation.style.gridColumnStart = apple.x;
-  appleAnimation.style.gridRowStart = apple.y;
-  console.log(appleAnimation.style);
-  boardAnimation.appendChild(appleAnimation);
+export function render() {
+  // Checking if the apple animation & the apple element are on the same spot
+  const isAppleShouldMove = (
+    appleElement.style.gridColumnStart != apple.x ||
+    appleElement.style.gridRowStart != apple.y
+  )
+
+  if (isAppleShouldMove) {
+    console.log('We should be creating an apple');
+    // Deleting every apple animation element from the desegnated board
+    appleBoard.innerHTML = '';
+    // recreating it on the spot of the new apple element.
+    appleElement = document.createElement('div');
+    appleElement.classList.add('apple');
+    appleElement.style.gridColumnStart = apple.x;
+    appleElement.style.gridRowStart = apple.y;
+    appleBoard.appendChild(appleElement);
+  }
 }
 
 export function update() {
@@ -27,18 +35,8 @@ export function update() {
     expandSnake(EXPANSION_RATE);
     apple = getRandomApplePosition()
     score ++
-    console.log(score);
     document.getElementById('score').innerHTML = `Score: ${score}`
   }
-}
-
-export function render(gameBoard) {
-  appleElement = document.createElement('div');
-  appleElement.style.gridColumnStart = apple.x;
-  appleElement.style.gridRowStart = apple.y;
-  appleElement.classList.add('apple');
-  gameBoard.appendChild(appleElement);
-  appleAnimations()
 }
 
 function getRandomApplePosition() {

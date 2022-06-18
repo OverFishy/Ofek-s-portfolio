@@ -21,7 +21,7 @@ body {
   border-radius: 12px;
 }
 
-#board-utility {
+#board-snake {
   width: 90vw;
   height: 90vw;
   margin: auto;
@@ -33,7 +33,7 @@ body {
   border-radius: 12px;
 }
 
-#board-animation {
+#board-apple {
   width: 90vw;
   height: 90vw;
   margin: auto;
@@ -45,17 +45,11 @@ body {
   border-radius: 12px;
 }
 
-.apple-animation {
-  background-color: rgb(94, 2, 2);
-  z-index: 12;
-  animation: breath 1500ms infinite forwards;
-}
-
 #board-container {
   display: grid;
 }
 
-#board-utility, #board, #board-animation{
+#board-snake, #board, #board-apple {
   grid-column: 1;
   grid-row: 1;
 }
@@ -69,18 +63,20 @@ body {
 .light-green {
   background-color: rgb(207, 236, 207);
 }
+
 .green {
   background-color: rgb(189, 227, 189);
 }
 
 .apple {
-  background-color: transparent;
-  z-index: 10;
+  background-color: rgb(94, 2, 2);
+  z-index: 12;
+  animation: breath 1500ms infinite;
 }
 
 @keyframes breath {
   0% {
-      transform: scale(1)
+    transform: scale(1)
   }
   50% {
     transform: scale(1.4)
