@@ -1,8 +1,9 @@
 import { getInputDirection } from "./input.js";
 
-export const SNAKE_MOVES_PER_SECOND = 1;
-
+export const SNAKE_MOVES_PER_SECOND = 5;
+const gameBoard = document.querySelector('board')
 const snakeBody = [ {x: 11, y: 11} ]
+console.log(snakeBody);
 export const snakeHead = snakeBody[0];
 let newSegments = 0; // by default our snake is not growing
 

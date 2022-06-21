@@ -28,6 +28,7 @@ export function render(gameBoard) {
     snakeElement.style.gridRowStart = sagment.y;
     snakeElement.classList.add('snake');
     gameBoard.appendChild(snakeElement);
+    // DecorBoard()
   })
 }
 
@@ -53,3 +54,13 @@ function addSegments() {
 
   newSegments = 0;
 }
+
+// TRIALS
+
+// first attmpt to decorate the snake board game, I choose to create new divs and putting them on the grid,
+// they are behaving like a seperate part of the grid, and not a park of it.
+// function DecorBoard() {
+//   let tile = document.createElement('div');
+//   tile.classList.add('gameboard-tile');
+//   document.getElementById('game-board').appendChild(tile)
+// }

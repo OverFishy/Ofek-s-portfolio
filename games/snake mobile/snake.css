@@ -17,14 +17,22 @@ body {
   display: grid;
   grid-template-columns: repeat(21, 1fr);
   grid-template-rows: repeat(21, 1fr);
+
 }
 
 .snake {
   background-color: green;
-  border: 0.25vmin solid black;
+  border: 0.25vmin solid rgb(64, 248, 55);
 }
 
 .apple {
   background-color: rgb(94, 2, 2);
-  border: 0.25vmin solid black;
+  border: 0.25vmin solid rgb(255, 0, 0);
+  /* -webkit-animation: breathing 5s ease-out infinite normal;
+  animation: breathing 5s ease-out infinite normal;
+  -webkit-font-smoothing: antialiased; */
+}
+
+.gameboard-tile {
+  border: 1px solid black;
 }
