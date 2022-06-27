@@ -1,0 +1,11 @@
+iframe {
+  height: 300px;
+  border: 1px solid black;
+}
+
+.iframe-holder {
+  display: flex;
+  align-items: center;
+  width: 60vw;
+  flex-direction: column;
+}
