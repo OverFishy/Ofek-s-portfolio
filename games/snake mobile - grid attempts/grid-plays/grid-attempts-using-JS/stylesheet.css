@@ -1,0 +1,21 @@
+#board {
+  width: 70vw;
+  height: 70vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(21, auto);
+  grid-template-rows: repeat(21, auto);
+  border: 12px solid #99885c;
+  border-radius: 12px;
+}
+
+.generated-tile {
+  /* class that the tiles share */
+}
+
+.light-green {
+  background-color: rgb(207, 236, 207);
+}
+.green {
+  background-color: rgb(189, 227, 189);
+}
