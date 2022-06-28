@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function moveCamera() {
+  console.log('move camera');
   document.documentElement.style.setProperty("--cameraZ", window.pageYOffset);
 }
 
@@ -33,7 +34,7 @@ function setSceneHeight() {
   );
 
   /* how the depth of the scene is determined (as in, how much can we scroll the z-axis) */
-  const height =
+  const height = true ? 3600 : 
     window.innerHeight +                  // base, to see the viewport
     scenePerspective * cameraSpeed +      // to be able to zoom in the entire perspective defined, the faster the camera, the less is needed
     itemZ * cameraSpeed * numberOfItems;
@@ -43,6 +44,7 @@ function setSceneHeight() {
 }
 
 function createFilmItem(film) {
+  console.log('creating film item');
   return `<div>
     <h2>${film.title}</h2>
     <p>Year: ${film.release_date}</p>
