@@ -7,12 +7,24 @@
     <title>snake</title>
     <link rel="stylesheet" href="grid.css">
   </head>
-  <script src="game.js" defer type="module"></script>
+  <script src="iframe.js" defer type="module"></script>
   <body>
-    <div id="game-board">
+    <!-- <div id="game-board">
       <div id="overlay"></div>
       <div id="grid"></div>
-      <div id="soft-grass"></div>
-    </div>
+      <div id="soft-grass"></div> -->
+      <iframe id="iframe"
+        title="Inline Frame Example"
+        width="300"
+        height="200"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"
+        fullscreen='true'>
+      </iframe>
+      <button id="full-screen">Full Screen</button>
+
+
+      <!-- var url = url.replace("watch?v=", "v/"); -->
+
+    <!-- </div> -->
   </body>
 </html>
